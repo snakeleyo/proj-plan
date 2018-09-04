@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="list" ng-controller="listCtrl">
+    <head>
+        <script src="/js/angular-1.2.32/angular.min.js"></script>
+        <script>
+            var app = angular.module('list', []);
+            app.controller('listCtrl', function($scope) {
+                $scope.username = '{{username}}';
+                $scope.projs = eval('{{project}}');
+                alert($scope.projs);
+            });
+            alert(1);
+        </script>
+        <!-- <script src="/javascripts/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+    </head>
+    <body>
+        <!-- <input type="text" ng-model="username" /> -->
+        <div>welcome mr \{{username}}</div>
+
+
+        <form action="list" method="post">
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>PROJECT-NAME</th>
+                    <th>GROUP-SIZE</th>
+                </tr>
+
+                <tr ng-repeat="x in projs">
+                    <th>ID</th>
+                    <th>PROJECT-NAME</th>
+                    <th>GROUP-SIZE</th>
+                </tr>
+
+                <!-- {{#each project}}
+                <tr>
+                    <td>
+                        <a href="javascript:void(0);">{{_id}}</a>
+                    </td>
+                    <td>
+                        {{proj_name}}
+                    </td>
+                    <td>
+                        {{group_size}}
+                    </td>
+                </tr>
+                {{/each}} -->
+            </table>
+            
+        </form>
+
+        
+
+    </body>
+</html>
